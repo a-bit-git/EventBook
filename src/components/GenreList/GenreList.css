@@ -1,0 +1,78 @@
+.genre-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.genre-header {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.genre-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.light-mode .genre-header h2 {
+  color: black;
+}
+
+.dark-mode .genre-header h2 {
+  color: white;
+}
+
+/* ===== GRID ===== */
+
+.genre-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5%;
+}
+
+/* ===== IMAGE ITEM (same size as old cards) ===== */
+
+.genre-item {
+  width: 8%;
+  height: 150px;
+  min-width: 100px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.genre-item:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+/* ===== IMAGE ===== */
+
+.genre-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1200px) {
+  .genre-item {
+    width: 18%;
+  }
+}
+
+@media (max-width: 900px) {
+  .genre-item {
+    width: 22%;
+    height: 230px;
+  }
+}
+
+@media (max-width: 600px) {
+  .genre-item {
+    width: 40%;
+    height: 200px;
+  }
+}

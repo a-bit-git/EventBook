@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
+import BuyPlans from "./components/BuyPlans/BuyPlans";
+import ArtistList from "./components/ArtistList/ArtistList";
+import GenreList from "./components/GenreList/GenreList";
+import AllEvents from "./components/AllEvents/AllEvents";
+import EventsList from "./components/EventsList/EventsList";
+import Footer from "./components/Footer/Footer";
+import "./App.css";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* ===== THEMED SECTION ===== */}
+      <div className={darkMode ? "dark" : "light"}>
+        <Header darkMode={darkMode} toggleTheme={toggleTheme} />
+        <Navbar darkMode={darkMode} />
+      </div>
+      <BuyPlans />
+      <ArtistList darkMode={darkMode} />
+      <GenreList darkMode={darkMode} />
+      <AllEvents darkMode={darkMode} />
+      <EventsList darkMode={darkMode} />
+      <Footer darkMode={darkMode} />
+    </>
   );
 }
 

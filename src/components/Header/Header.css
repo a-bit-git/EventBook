@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* LIGHT MODE */
+header.light-mode {
+  background: linear-gradient(
+    120deg,
+    #4f66a0 0%,
+    #7e6cbe 45%,
+    #5bbd9e 100%
+  );
+  color: black;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* DARK MODE */
+header.dark-mode {
+  background: linear-gradient(
+    120deg,
+    #030712 0%,
+    #2b1357 50%,
+    #1c614f 100%
+  );
+  color: white;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+/* ✅ LOGO CONTAINER */
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+/* LOGO IMAGE */
+.logo-img {
+  object-fit: contain;
+}
+
+/* LOGO TEXT */
+.logo-text {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.logo-loop {
+  background: linear-gradient(
+    90deg,
+    #25AAE1,
+    #6EA743,
+    #F7941E
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: 1px;
+  filter: drop-shadow(0 0 6px rgba(37,170,225,0.25));
+}
+
+/* ================= NAV WRAPPER ================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* NAV MENU (Home About Contact More) */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.light-mode .nav-item {
+  color: black;
+}
+
+.dark-mode .nav-item {
+  color: white;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.nav-menu li:hover {
+  opacity: 0.7;
+}
+
+/* ================= SEARCH ================= */
+
+.search-container {
+  position: relative;
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width 0.4s ease;
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(45deg, #c5f8ff, hwb(265 62% 0%)),
+    linear-gradient(45deg, #00ff88, #ff26d4, #25a8ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.search-container.active {
+  width: 300px;
+}
+
+.search-text {
+  position: absolute;
+  left: 40px;
+  white-space: nowrap;
+  color: black;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  font-size: 16px;
+  color: black;
+  transition: left 0.4s ease;
+}
+
+.search-container.active .search-icon {
+  left: 290px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+  letter-spacing: 1px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+/* ================= RIGHT ACTION GROUP ================= */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* LOCATION DROPDOWN */
+.location-select {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(45deg, #d2faff, hwb(265 71% 0%));
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.location-select select {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.location-icon {
+  font-size: 16px;
+  color: black;
+}
+
+/* MODE BUTTON (ICON VERSION) */
+.mode-btn {
+  background: transparent;
+  color: black;
+  border: none;
+  padding-right: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.mode-btn svg {
+  transition: transform 0.4s ease;
+}
+.mode-btn:hover svg {
+  transform: rotate(25deg) scale(1.1);
+  opacity: 0.85;
+}
+
+/* Dark mode appearance */
+.dark-mode .mode-btn {
+  background: transparent;
+  color: white;
+}
+
+/* REGISTER BUTTON */
+.register-btn {
+  background: linear-gradient(45deg, #d2faff, hwb(265 71% 0%));
+  color: black;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .nav-menu {
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .header {
+    padding: 0 20px;
+  }
+
+  .logo-img {
+    height: 32px;
+    width: 32px;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+}

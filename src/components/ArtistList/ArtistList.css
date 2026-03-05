@@ -1,0 +1,169 @@
+/* =========================
+   SECTION
+========================= */
+
+.artist-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===== HEADING ===== */
+
+.artist-header {
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.artist-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+/* theme colors */
+.light-mode .artist-header h2 {
+  color: #111;
+}
+
+.dark-mode .artist-header h2 {
+  color: #fff;
+}
+
+/* =========================
+   MARQUEE AREA
+========================= */
+
+.artist-marquee-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* moving rows */
+.artist-row {
+  display: flex;
+  width: max-content;
+  gap: 0.2%;
+}
+
+/* =========================
+   CARD DESIGN
+========================= */
+
+.artist-card {
+
+  /* percentage responsive sizing */
+  flex: 0 0 25%;
+  max-width: 25%;
+  aspect-ratio: 6 / 1.5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+}
+
+/* themes */
+.light-mode .artist-card {
+  background: #f1f1f1;
+}
+
+.dark-mode .artist-card {
+  background: rgba(255,255,255,0.08);
+}
+
+/* hover */
+.artist-card:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   IMAGE AREA
+========================= */
+
+.artist-img {
+  width: 28%;
+  height: 80%;
+  border-radius: 8px;
+  background: #cfcfcf; /* placeholder */
+}
+
+/* =========================
+   TEXT AREA
+========================= */
+
+.artist-info {
+  margin-left: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.artist-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+.artist-genre {
+  font-size: clamp(12px, 1vw, 14px);
+  opacity: 0.7;
+}
+
+/* =========================
+   AUTO MOVEMENT
+========================= */
+
+.move-left {
+  animation: scrollLeft 10s linear infinite;
+}
+
+.move-right {
+  animation: scrollRight 10s linear infinite;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .artist-card {
+    flex: 0 0 28%;
+    max-width: 28%;
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-card {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-card {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+}
