@@ -40,11 +40,11 @@
   gap: 7px;
 }
 
-/* moving rows */
 .artist-row {
   display: flex;
   width: max-content;
   gap: 0.2%;
+  will-change: transform;
 }
 
 /* =========================
@@ -53,10 +53,10 @@
 
 .artist-card {
 
-  /* percentage responsive sizing */
-  flex: 0 0 25%;
-  max-width: 25%;
+  flex: 0 0 9%;
+  max-width: 9%;
   aspect-ratio: 6 / 1.5;
+  height: 80px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -66,7 +66,6 @@
   transition: transform 0.3s ease;
 }
 
-/* themes */
 .light-mode .artist-card {
   background: #f1f1f1;
 }
@@ -75,20 +74,30 @@
   background: rgba(255,255,255,0.08);
 }
 
-/* hover */
 .artist-card:hover {
   transform: translateY(-4px);
 }
 
 /* =========================
-   IMAGE AREA
+   IMAGE AREA (FIXED SMALL)
 ========================= */
 
 .artist-img {
-  width: 28%;
-  height: 80%;
-  border-radius: 8px;
-  background: #cfcfcf; /* placeholder */
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artist-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* =========================
@@ -98,8 +107,7 @@
 .artist-info {
   margin-left: 6%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 .artist-name {
@@ -108,21 +116,16 @@
   font-size: clamp(14px, 1.2vw, 18px);
 }
 
-.artist-genre {
-  font-size: clamp(12px, 1vw, 14px);
-  opacity: 0.7;
-}
-
 /* =========================
    AUTO MOVEMENT
 ========================= */
 
 .move-left {
-  animation: scrollLeft 10s linear infinite;
+  animation: scrollLeft 30s linear infinite;
 }
 
 .move-right {
-  animation: scrollRight 10s linear infinite;
+  animation: scrollRight 30s linear infinite;
 }
 
 @keyframes scrollLeft {

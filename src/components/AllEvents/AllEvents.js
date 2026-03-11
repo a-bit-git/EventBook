@@ -31,10 +31,9 @@ function AllEvents({ darkMode }) {
         <h2>All Events</h2>
 
         <div className="filter-buttons">
-          <button>Today</button>
-          <button>Tomorrow</button>
-          <button>This Weekend</button>
-          <button>Live Gigs</button>
+          <button>This Month</button>
+          <button>Next Month</button>
+          <button>After Next Month</button>
 
           <button
             className="sort-btn"

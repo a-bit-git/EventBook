@@ -1,0 +1,110 @@
+.payment-section{
+padding:40px 20px;
+min-height:80vh;
+font-family:"Poppins",sans-serif;
+display:flex;
+justify-content:center;
+}
+
+.payment-container{
+width:100%;
+max-width:600px;
+}
+
+.payment-title{
+font-size:28px;
+margin-bottom:25px;
+text-align:center;
+}
+
+.payment-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.payment-row{
+display:flex;
+justify-content:space-between;
+margin:12px 0;
+font-size:15px;
+}
+
+.payment-row.total{
+font-size:18px;
+font-weight:600;
+}
+
+.discount{
+color:#e53935;
+}
+
+.seat-list{
+max-width:250px;
+text-align:right;
+}
+
+.pay-btn{
+margin-top:25px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+background:#ff4d4d;
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.2s;
+}
+
+.pay-btn:hover{
+background:#e53935;
+}
+
+.back-btn{
+border:none;
+padding:8px 16px;
+border-radius:6px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+/* DARK MODE */
+
+.dark-mode .payment-card{
+background:#2b2b2b;
+color:white;
+}
+
+.dark-mode .payment-title{
+color:white;
+}
+
+.dark-mode .back-btn{
+background:#444;
+color:white;
+}
+
+.dark-mode .pay-btn{
+background:#ff6b6b;
+}
+
+.dark-mode .pay-btn:hover{
+background:#ff5252;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+.payment-row{
+font-size:14px;
+}
+
+.payment-title{
+font-size:22px;
+}
+
+}

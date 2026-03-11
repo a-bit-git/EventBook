@@ -1,3 +1,6 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap');
+
 /* =========================
    SECTION AREA
 ========================= */
@@ -25,14 +28,10 @@
   scroll-snap-type: x mandatory;
   display: flex;
   gap: 20px;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  overflow: hidden;
   width: 100%;
-
-  /* small side breathing space
-     so next/prev strap visible */
   padding: 0 4vw;
-  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* =========================
@@ -40,48 +39,86 @@
 ========================= */
 
 .plan-strap {
-
-  /* ✅ Responsive horizontal size */
   flex: 0 0 95%;
   max-width: 95%;
-  /* ✅ HEIGHT auto-adjusts with width */
-  aspect-ratio: 8 / 1.4;   /* controls strap thickness */
-  /* safety limits */
+  aspect-ratio: 8 / 1.4;
   min-height: 60px;
   max-height: 120px;
   border-radius: 16px;
   background: rgb(231, 231, 231);
-  backdrop-filter: blur(10px);
   scroll-snap-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 600;
-  color: rgb(145, 23, 23);
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  position: relative;
 }
 
 .plan-strap:hover {
   transform: translateY(-6px);
 }
 
+/* ===== IMAGE ===== */
+
+.plan-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  position: absolute;
+  inset: 0;
+}
+
 /* =========================
-   NAV BUTTONS (EDGE ATTACHED)
+   BANNER TEXT
+========================= */
+
+.banner-headline {
+
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: white;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: 1px;
+
+  line-height: 1.1;
+  max-width: 40%;
+}
+
+.banner-slogan {
+
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: white;
+
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(12px, 1vw, 16px);
+  font-weight: 400;
+
+  max-width: 30%;
+  text-align: right;
+  line-height: 1.4;
+}
+
+/* =========================
+   NAV BUTTONS
 ========================= */
 
 .plan-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
-  /* make perfect square box */
   width: 36px;
   height: 36px;
-
-  /* CENTER ICON INSIDE BOX */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +137,6 @@
   background: rgba(120, 120, 120, 0.8);
 }
 
-/* ATTACHED TO SCREEN EDGES */
 .plan-btn.left {
   left: 0;
   border-radius: 0 8px 8px 0;
@@ -115,7 +151,6 @@
    RESPONSIVE
 ========================= */
 
-/* TABLET */
 @media (max-width: 1024px) {
 
   .buyplans-slider {
@@ -128,7 +163,6 @@
   }
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
 
   .plan-strap {
@@ -146,12 +180,10 @@
   }
 }
 
-/* SMALL MOBILE */
 @media (max-width: 480px) {
 
   .plan-strap {
     min-width: 92vw;
     height: 100px;
-    font-size: 18px;
   }
 }

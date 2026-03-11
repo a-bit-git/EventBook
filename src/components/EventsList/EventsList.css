@@ -4,16 +4,12 @@
   padding: 0px 50px;
 }
 
-/* ===== GRID LAYOUT ===== */
-
 .events-grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 22px;
 }
-
-/* ===== CARD ===== */
 
 .event-card {
   border-radius: 14px;
@@ -22,51 +18,63 @@
   transition: 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 480px;
 }
 
-/* hover effect */
 .event-card:hover {
   transform: translateY(-8px);
 }
 
-/* ===== IMAGE ===== */
-
 .event-image {
   width: 100%;
-  height: 250px;
+  height: 350px;
   background: grey;
 }
-
-/* ===== INFO ===== */
 
 .event-info {
   padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
-/* placeholder lines */
+/* ===== EVENT TEXT ===== */
 
-.event-title,
-.event-meta,
-.event-price {
-  height: 12px;
+.eventdetails-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.event-performer {
+  font-size: 16px;
+}
+
+.event-datetime {
+  font-size: 14px;
+}
+
+/* ===== LOCATION + BUTTON ROW ===== */
+
+.event-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.event-location {
+  font-size: 14px;
+}
+
+/* ===== VIEW DETAILS BUTTON ===== */
+
+.view-details-btn {
+  font-size: 13px;
+  padding: 6px 12px;
   border-radius: 6px;
-}
-
-/* different widths for realism */
-.event-title {
-  width: 80%;
-}
-
-.event-meta {
-  width: 60%;
-}
-
-.event-price {
-  width: 40%;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.25s ease;
 }
 
 /* ===== LIGHT MODE ===== */
@@ -77,9 +85,19 @@
 }
 
 .light-mode .event-title,
-.light-mode .event-meta,
-.light-mode .event-price {
-  background: #e6e6e6;
+.light-mode .event-performer,
+.light-mode .event-datetime,
+.light-mode .event-location {
+  color: #222;
+}
+
+.light-mode .view-details-btn {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.light-mode .view-details-btn:hover {
+  background: #d5d5d5;
 }
 
 /* ===== DARK MODE ===== */
@@ -91,9 +109,19 @@
 }
 
 .dark-mode .event-title,
-.dark-mode .event-meta,
-.dark-mode .event-price {
-  background: rgba(255,255,255,0.2);
+.dark-mode .event-performer,
+.dark-mode .event-datetime,
+.dark-mode .event-location {
+  color: #fff;
+}
+
+.dark-mode .view-details-btn {
+  background: #555;   /*buton colour*/ 
+  color: #fff;
+}
+
+.dark-mode .view-details-btn:hover {
+  background: #25252583;
 }
 
 /* ===== RESPONSIVE ===== */

@@ -2,6 +2,19 @@ import React, { useState, useEffect, useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import "./Navbar.css";
 
+/* ===== IMPORT EVENT POSTERS ===== */
+
+import ArijitSingh from "../../utilities/AllEvents/EventPosters/ArijitSingh.jpg";
+import ZakirKhan from "../../utilities/AllEvents/EventPosters/ZakirKhan.jpg";
+import ShreyaGhoshal from "../../utilities/AllEvents/EventPosters/ShreyaGhoshal.jpg";
+import AnubhavSinghBassi from "../../utilities/AllEvents/EventPosters/AnubhavSinghBassi.jpg";
+import SamayRaina from "../../utilities/AllEvents/EventPosters/SamayRaina.jpg";
+import SonuNigam from "../../utilities/AllEvents/EventPosters/SonuNigam.jpg";
+
+/* ===== IMPORT EVENT DATA ===== */
+
+import eventsData from "../../utilities/AllEvents/EventData/AllEventData";
+
 function Navbar({ darkMode }) {
 
   /* =========================
@@ -53,7 +66,7 @@ function Navbar({ darkMode }) {
   }, [text1, text2, deleting]);
 
   /* =========================
-     SLIDER LOGIC (MERGED)
+     SLIDER LOGIC
   ========================= */
 
   const sliderRef = useRef(null);
@@ -107,7 +120,26 @@ function Navbar({ darkMode }) {
     directionRef.current = 0;
   };
 
-  const cards = Array.from({ length: 10 });
+  /* =========================
+     UPCOMING EVENT POSTERS
+  ========================= */
+
+  const posters = [
+    ArijitSingh,
+    ZakirKhan,
+    ShreyaGhoshal,
+    AnubhavSinghBassi,
+    SamayRaina,
+    SonuNigam
+  ];
+
+  /* GET FIRST NAME FROM PERFORMER */
+
+  const performerNames = eventsData
+    .filter(event => event.performer)
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .slice(0, 6)
+    .map(event => event.performer.split(" ")[0]);
 
   /* =========================
      JSX
@@ -121,6 +153,7 @@ function Navbar({ darkMode }) {
         <div className="left-content">
 
           <h1 className="upcoming-title">
+
             <span className="line-one">
               {lineOne.split("").map((char, i) => (
                 <span key={i} className={`letter ${i < text1.length ? "show" : "hide"}`}>
@@ -136,13 +169,15 @@ function Navbar({ darkMode }) {
                 </span>
               ))}
             </span>
+
           </h1>
 
           <button className="explore-btn">Explore More</button>
+
         </div>
       </div>
 
-      {/* RIGHT SIDE SLIDER */}
+      {/* RIGHT SIDE */}
       <div className="navbar-right">
         <div className="right-content">
 
@@ -160,9 +195,19 @@ function Navbar({ darkMode }) {
             )}
 
             <div className="slider-container" ref={sliderRef}>
-              {cards.map((_, index) => (
+              {posters.map((poster, index) => (
                 <div key={index} className="slider-card">
-                  Card {index + 1}
+
+                  <img
+                    src={poster}
+                    alt="event poster"
+                    className="poster-img"
+                  />
+
+                  <div className="poster-artist">
+                    {performerNames[index]}
+                  </div>
+
                 </div>
               ))}
             </div>

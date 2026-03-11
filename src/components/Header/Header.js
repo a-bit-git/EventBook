@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { FiSearch, FiMapPin, FiMoon, FiSun } from "react-icons/fi";
 import logo from "../../utilities/Logo.png";
 import cities from "../../utilities/cities";
@@ -67,10 +68,9 @@ function Header({ darkMode, toggleTheme }) {
 
         {/* NAV LIST */}
         <ul className="nav-menu">
-          <li className="nav-item">Home</li>
-          <li className="nav-item">About</li>
-          <li className="nav-item">Contact</li>
-          <li className="nav-item">More</li>
+          <li className="nav-item"> <Link to="/">Home</Link> </li>
+          <li className="nav-item"> <Link to="/about">About</Link> </li>
+          <li className="nav-item"> <Link to="/contact">Contact</Link> </li>
         </ul>
 
         {/* ACTION BUTTONS */}
